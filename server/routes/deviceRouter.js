@@ -5,7 +5,7 @@ const DeviceController = require('../controllers/deviceController')
 
 router.post('/', DeviceController.create)
 router.get('/', DeviceController.getAll)
-router.get('/:id', DeviceController.getById)
+router.get('/:id', DeviceController.getOne)
 // router.delete('/',)
 
 module.exports = router
