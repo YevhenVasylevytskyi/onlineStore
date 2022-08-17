@@ -6,8 +6,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import { NavLink } from 'react-router-dom';
 import { SHOP_ROUTE } from '../utils/consts';
+import {observer} from 'mobx-react-lite'
 
-export const NavBar = () => {
+export const NavBar = observer( () => {
     const {user} = useContext(Context)
 
   return (
@@ -20,17 +21,14 @@ export const NavBar = () => {
           ?
           <Nav className="ml-auto" style={{color:'white'}}>
             <Button variant="outline-light">Панель адміністратора</Button>
-            <Button variant="outline-light">Вийти</Button>            
+            <Button variant="outline-light" style={{marginLeft: '10px'}}>Вийти</Button>            
           </Nav>
           :
           <Nav className="ml-auto" style={{ color: 'white' }}>
-            <Button variant="outline-light">Панель адміністратора</Button>
-            <Button variant="outline-light">Авторизація</Button>            
-          </Nav>
-      
-        }
-        
+            <Button variant="outline-light" onClick={() => user.setIsAuth(true)}>Авторизація</Button>            
+          </Nav>      
+        }        
       </Container>
     </Navbar>
   )
-}
+})
