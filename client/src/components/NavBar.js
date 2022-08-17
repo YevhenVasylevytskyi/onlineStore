@@ -21,7 +21,7 @@ export const NavBar = observer( () => {
           ?
           <Nav className="ml-auto" style={{color:'white'}}>
             <Button variant="outline-light">Панель адміністратора</Button>
-            <Button variant="outline-light" style={{marginLeft: '10px'}}>Вийти</Button>            
+            <Button variant="outline-light" className='ms-4'>Вийти</Button>            
           </Nav>
           :
           <Nav className="ml-auto" style={{ color: 'white' }}>
