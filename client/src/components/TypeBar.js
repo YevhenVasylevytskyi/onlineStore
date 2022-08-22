@@ -15,8 +15,7 @@ const TypeBar = observer(() => {
                     active={type.id === device.selectedType.id}
                     onClick={() => {
                         device.setSelectedType(type)
-                        console.log(type.id)
-                        console.log(device.selectedType.id)
+                        
                     }}
                     key={type.id}>
                     

@@ -11,15 +11,18 @@ export default class DeviceStore {
         this._brands = [
             { id: 1, name: 'Samsung' },
             { id: 2, name: 'Apple' },
+            { id: 3, name: 'Lenovo' },
+            { id: 4, name: 'Asus' },
         ]
-        this._device = [
-            { id: 2, name: 'Samsung 10', price: 25000, rating: 5, img: '../../server/static/1fa78165-6a41-4161-944a-fda45f848ae5.jpg' },
-            { id: 3, name: 'Samsung 10', price: 25000, rating: 5, img: '../../server/static/1fa78165-6a41-4161-944a-fda45f848ae5.jpg' },
-            { id: 1, name: 'Samsung 10', price: 25000, rating: 5, img: '../../server/static/1fa78165-6a41-4161-944a-fda45f848ae5.jpg' },
-            { id: 4, name: 'Samsung 10', price: 25000, rating: 5, img: '../../server/static/1fa78165-6a41-4161-944a-fda45f848ae5.jpg' },
-            { id: 5, name: 'Samsung 10', price: 25000, rating: 5, img: '../../server/static/1fa78165-6a41-4161-944a-fda45f848ae5.jpg' },
+        this._devices = [            
+            { id: 1, name: 'Samsung 12', price: 25000, rating: 5, img: 'https://i.allo.ua/media/catalog/product/cache/1/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/i/m/image_product_key_visual_beyond_s10_product_image_black_181211_sm_g973_galaxys10_front_black_8_1.jpg' },
+            { id: 2, name: 'Samsung 10', price: 25000, rating: 6, img: 'https://i.allo.ua/media/catalog/product/cache/1/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/i/m/image_product_key_visual_beyond_s10_product_image_black_181211_sm_g973_galaxys10_front_black_8_1.jpg' },
+            { id: 3, name: 'Samsung 11', price: 25000, rating: 7, img: 'https://i.allo.ua/media/catalog/product/cache/1/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/i/m/image_product_key_visual_beyond_s10_product_image_black_181211_sm_g973_galaxys10_front_black_8_1.jpg' },
+            { id: 4, name: 'Samsung 13', price: 25000, rating: 8, img: 'https://i.allo.ua/media/catalog/product/cache/1/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/i/m/image_product_key_visual_beyond_s10_product_image_black_181211_sm_g973_galaxys10_front_black_8_1.jpg' },
+            { id: 5, name: 'Samsung 14', price: 25000, rating: 9, img: 'https://i.allo.ua/media/catalog/product/cache/1/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/i/m/image_product_key_visual_beyond_s10_product_image_black_181211_sm_g973_galaxys10_front_black_8_1.jpg' },
         ]
         this._selectedType = {}
+        this._selectedBrand = {}
 
         makeAutoObservable(this)
     }
@@ -40,6 +43,10 @@ export default class DeviceStore {
         this._selectedType = type
     }
 
+    setSelectedBrand(brand) {
+        this._selectedBrand = brand
+    }
+
     get types() {
         return this._types
     }
@@ -54,5 +61,9 @@ export default class DeviceStore {
     
     get selectedType() {
         return this._selectedType
+    }
+
+        get selectedBrand() {
+        return this._selectedBrand
     }
 }
