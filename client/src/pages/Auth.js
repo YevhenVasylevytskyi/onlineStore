@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Card, Form, Row, Container } from "react-bootstrap";
 import {NavLink, useLocation} from 'react-router-dom'
+import { registration, login } from "../http/userAPI";
 import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../utils/consts";
 
 const Auth = () => {
     const location = useLocation()
     const isLogin = location.pathname === LOGIN_ROUTE
+
+    const [email, setEmail] = useState('');
+    const [password , setPassword] = useState('');
+
+    const click = async () => {
+        if (isLogin) {
+            const response = await login()
+            console.log(response)
+        }
+        else {
+            const response = await registration(email, password)
+            console.log(response)
+        }
+    }
 
     return (
         <Container
@@ -18,10 +33,15 @@ const Auth = () => {
                     <Form.Control
                         className="mt-4"
                         placeholder="Введіть Ваш email"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
                     />
                     <Form.Control
                         className="mt-4"
                         placeholder="Введіть пароль"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                        type="password"
                     />                       
                     <Row className="d-flex justify-content-between mt-4 ps-4 pe-4">
                         {isLogin ?
@@ -41,7 +61,7 @@ const Auth = () => {
                         <div style={{ display: "inline-block" }}>
                             <Button                                
                                 variant={"outline-success"}
-                                
+                                onClick={click}
                                 className="mt-4"
                             >
                                 {isLogin ? 'Увійти' : 'Реєстрація'}

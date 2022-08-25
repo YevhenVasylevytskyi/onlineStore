@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Col, Image } from "react-bootstrap";
 import star from '../assets/star.png'
-import { useNavigate, useLocation } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { DEVICE_ROUTE } from '../utils/consts';
 
 const DeviceItem = ({device}) => {

@@ -9,12 +9,12 @@ const DeviceList = observer(() => {
 
 
     return (
-        <div className="d-flex col flex-wrap">
+        <Row className="d-flex col flex-wrap">
             {device.devices.map(device =>
                 <DeviceItem key={device.id} device={device}/>                    
             )}
             
-        </div>
+        </Row>
     );
 });
 
