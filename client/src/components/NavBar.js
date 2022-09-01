@@ -23,8 +23,8 @@ const NavBar = observer( () => {
           ?
           <Nav className="ml-auto" style={{color:'white'}}>
             <Button
-                variant={"outline-light"}
-                onClick={() => navigate(ADMIN_ROUTE)}
+              variant={"outline-light"}
+              onClick={() => navigate(ADMIN_ROUTE)}
             >
               Панель адміністратора
             </Button>
@@ -39,8 +39,8 @@ const NavBar = observer( () => {
           :
           <Nav className="ml-auto" style={{ color: 'white' }}>
             <Button
-              variant={"outline-light"} o
-              nClick={() => user.setIsAuth(true)}
+              variant={"outline-light"}
+              onClick={() => user.setIsAuth(true)}
             >
               Авторизація
             </Button>            
